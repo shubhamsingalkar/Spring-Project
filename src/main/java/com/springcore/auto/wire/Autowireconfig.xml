@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">    
+    
+   <!--  this is our bean -->
+   <bean class="com.springcore.auto.wire.Address" name="address1">
+   <property name="street" value="Front Road"></property>
+   <property name="city" value="Pune"></property>
+   </bean>
+   
+   <bean class="com.springcore.auto.wire.Address" name="address">
+   <property name="street" value="Grant Road"></property>
+   <property name="city" value="Mumbai"></property>
+   </bean>
+    
+    <bean class="com.springcore.auto.wire.Employee" name="emp1" autowire="byName"></bean>
+    <!-- for byName autowire the reference variable name should be same in the class  -->
+    
+    
+  <!--   <bean class="com.springcore.auto.wire.Employee" name="emp2" autowire="byType"/>
+    autowire=byType is checks the reference variable type. here type of address is Address -->
+    
+    <bean class="com.springcore.auto.wire.Employee" name="emp3" autowire="constructor"></bean>
+   <!--  autowire=constructor is checks constructor of reference variable  -->
+ </beans>

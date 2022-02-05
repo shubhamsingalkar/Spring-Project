@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	
+	xmlns:util="http://www.springframework.org/schema/util"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd"> 
+    
+    
+       
+     <!-- this will scan whole package to make a bean there we don't need of making a bean, 
+          it will create bean automatically for all classes n this package-->
+   <context:component-scan base-package="com.springcore.stereotype"></context:component-scan>
+    
+    
+    
+    <!-- to initialize list we need to make standalone list -->
+    <util:list list-class="java.util.ArrayList" id="add">
+    <value>Tilak Road </value>
+    <value>Swargate</value>
+  <value>Pimpri chinchwad</value>
+    <value>Hadapsar</value>
+    </util:list>
+    
+     </beans>

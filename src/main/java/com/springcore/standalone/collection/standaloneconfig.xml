@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	
+	xmlns:util="http://www.springframework.org/schema/util"
+	 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd"> 
+     
+<!--  standalone collection means no need to assign values inside the bean tag, we create it outside bean tag and use
+ it in any number of bean 
+         -->
+    
+ <!--   Standalone list  -->     <!--  This list we can use in any bean called as standalone list -->
+ <util:list list-class="java.util.LinkedList" id="mybestfriends">
+ <value>Amit</value>
+  <value>Sudhir</value>
+   <value>Shweta</value>
+    <value>Rohit</value>
+ </util:list>
+ 
+ 
+<!--  Standalone Map -->
+<util:map map-class="java.util.TreeMap" id="fees">
+<entry key="Spring framework" value="8000"/>
+<entry key="Java core" value="5100"/>
+<entry key="Angular" value="6000"/>
+</util:map>
+ 
+ 
+ <!--  Standalone Properties class (it is class therefore don't need to specify implementation class)-->
+ <util:properties id="prop"> 
+ <prop key="username">shubham123</prop>
+ <prop key="password">sssss</prop>
+ <prop key="id">123654</prop>
+ 
+ </util:properties>
+ 
+ 
+     <bean class="com.springcore.standalone.collection.Person" name="person1">
+     <!-- <property name="friends"><ref bean="mybestfriends"/></property> -->
+                      <!--OR -->
+       <property name="friends" ref="mybestfriends"></property>
+       <property name="fees_structure" ref="fees"></property>
+       <property name="properties" ref="prop"></property>
+     </bean>
+     
+     
+     
+     
+     
+     
+    
+ </beans>
